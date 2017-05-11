@@ -1,0 +1,10 @@
+---
+title: "index"
+author: "InflatablePizza"
+date: "May 11, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+read.csv("data/intro-survey.csv")
+```
