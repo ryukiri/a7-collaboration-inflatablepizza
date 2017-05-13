@@ -15,10 +15,10 @@ survey <- read.csv("data/intro-survey.csv")
 num.students <- nrow(survey)
 
 # Number of freshmen, sophomores, juniors, and seniors in the class
-num.freshmen <- nrow(survey %>% filter(What.is.your.current.class.standing. == "Freshman"))
-num.sophomores <- nrow(survey %>% filter(What.is.your.current.class.standing. == "Sophomore"))
-num.juniors <- nrow(survey %>% filter(What.is.your.current.class.standing. == "Junior"))
-num.seniors <- nrow(survey %>% filter(What.is.your.current.class.standing. == "Senior"))
+num.freshmen <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Freshman"))
+num.sophomores <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Sophomore"))
+num.juniors <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Junior"))
+num.seniors <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Senior"))
 
 # Percentage of people who typically use Mac, percentage of people who typically use Windows, percentage of people who use other or a combination
 mac <- round(nrow(survey %>% filter(What.operating.system.do.you.typically.use. == "Mac")) / num.students * 100)
