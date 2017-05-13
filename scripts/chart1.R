@@ -4,9 +4,6 @@ library(ggplot2)
 # Create a pie chart about the question "Do you consider 
 # yourself as a dog person or a cat person :)
 
-survey <- read.csv("data/intro-survey.csv")%>%
-                          as.data.frame(stringsAsFactors=FALSE)
-
 Chart1 <- function(dataset){
   #Organize information
   group <- dataset%>%group_by(Do.you.consider.yourself.)%>%summarise(count = n()) 
@@ -18,4 +15,3 @@ Chart1 <- function(dataset){
     ggtitle("Do you consider yourself as a dog person or a cat person?") 
   return (pie)
 }
- Chart1(survey)
