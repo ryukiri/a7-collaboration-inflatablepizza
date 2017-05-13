@@ -6,5 +6,28 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-read.csv("data/intro-survey.csv")
+library(dplyr)
+library(knitr)
+
+survey <- read.csv("data/intro-survey.csv")
+
+# Total number of students
+num.students <- nrow(survey)
+
+# Number of freshmen, sophomores, juniors, and seniors in the class
+num.freshmen <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Freshman"))
+num.sophomores <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Sophomore"))
+num.juniors <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Junior"))
+num.seniors <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == "Senior"))
+
+# Percentage of people who typically use Mac, percentage of people who typically use Windows, percentage of people who use other or a combination
+mac <- round(nrow(survey %>% filter(What.operating.system.do.you.typically.use. == "Mac")) / num.students * 100)
+windows <- round(nrow(survey %>% filter(What.operating.system.do.you.typically.use. == "Windows")) / num.students * 100)
+other <- mac - windows
+
+# Pecentages of people who have never used R, used R a few times, and intermediate users of R
+never.used.r <- round(nrow(survey %>% filter(Using.the.R.programming.language == "Never used it")) / num.students * 100)
+used.a.few.times.r <- round(nrow(survey %>% filter(Using.the.R.programming.language == "Have used it a few times")) / num.students * 100)
+intermediate.user.r <- round(nrow(survey %>% filter(Using.the.R.programming.language == "Intermediate user")) / num.students * 100)
 ```
+There are a total of `r num.freshmen` freshmen, `r num.sophomores` sophomores, `r num.juniors` juniors, and `r num.seniors` seniors in the class. `r never.used.r`% of people in the class have never used R before, `r used.a.few.times.r`% of people in the class have used R a few times before, and `r intermediate.user.r`% are intermediate users of R. `r mac`% of people typically use Mac operating system, `r windows`% of people typically use Windows operating system, and `r other`% typically use a combination of systems or a different system.
