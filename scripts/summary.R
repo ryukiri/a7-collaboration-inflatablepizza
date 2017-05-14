@@ -5,7 +5,7 @@ num.students <- nrow(survey)
 
 # Function to get number of people at a certain class standing in the class
 GetNumPeopleByClassStanding <- function(survey, class) {
-  num.in.class <- nrow(survey %>% filter(X...What.is.your.current.class.standing. == class))
+  num.in.class <- nrow(survey %>% filter(What.is.your.current.class.standing. == class))
   return(num.in.class)
 }
 

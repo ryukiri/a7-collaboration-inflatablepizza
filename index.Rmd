@@ -6,8 +6,13 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+setwd("C:/Users/Austin Quach/Google Drive/College/Sophomore/Info 201/Homework/a7-collaboration-inflatablepizza")
 survey <- read.csv("data/intro-survey.csv")
 source("./scripts/summary.R")
+source("scripts/chart1.R")
+source("scripts/chart2.R")
+source("scripts/chart3.R")
+library(cowplot)
 num.freshmen <- GetNumPeopleByClassStanding(survey, "Freshman")
 num.sophomores <- GetNumPeopleByClassStanding(survey, "Sophomore")
 num.juniors <- GetNumPeopleByClassStanding(survey, "Junior")
@@ -20,3 +25,9 @@ percent.windows <- PercentPeopleUseOperatingSystem(survey, "Windows")
 
 ```
 There are a total of `r num.freshmen` freshmen, `r num.sophomores` sophomores, `r num.juniors` juniors, and `r num.seniors` seniors in the class. `r never.used.r`% of people in the class have never used R before, `r used.a.few.times.r`% of people in the class have used R a few times before, and `r intermediate.user.r`% are intermediate users of R. `r percent.mac`% of people typically use Mac operating system while `r percent.windows`% of people typically use Windows operating system.
+ 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+ggdraw(Chart1(survey))
+ggdraw(Chart2(survey))
+ggdraw(Chart3(survey))
+```
