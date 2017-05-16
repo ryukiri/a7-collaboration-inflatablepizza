@@ -24,6 +24,7 @@ percent.mac <- PercentPeopleUseOperatingSystem(survey, "Mac")
 percent.windows <- PercentPeopleUseOperatingSystem(survey, "Windows")
 
 ```
+##Survey Summary
 There are a total of `r num.freshmen` freshmen, `r num.sophomores` sophomores, `r num.juniors` juniors, and `r num.seniors` seniors in the class. `r never.used.r`% of people in the class have never used R before, `r used.a.few.times.r`% of people in the class have used R a few times before, and `r intermediate.user.r`% are intermediate users of R. `r percent.mac`% of people typically use Mac operating system while `r percent.windows`% of people typically use Windows operating system.
  
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
