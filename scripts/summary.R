@@ -20,3 +20,15 @@ PercentWithRExperience <- function(survey, experience) {
   percent.with.experience <- round(nrow(survey %>% filter(Using.the.R.programming.language == experience)) / num.students * 100)
   return(percent.with.experience)
 }
+
+# Function to get percent of cat people
+PercentCatPerson <- function(survey) {
+  percent.cat <- round(nrow(survey %>% filter(Do.you.consider.yourself. == "A cat person....")) / num.students * 100)
+  return(percent.cat)
+}
+
+# Function to get percent of cat people
+PercentDogPerson <- function(survey) {
+  percent.dog <- round(nrow(survey %>% filter(Do.you.consider.yourself. == "A dog person...")) / num.students * 100)
+  return(percent.dog)
+}

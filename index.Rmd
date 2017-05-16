@@ -22,10 +22,11 @@ used.a.few.times.r <- PercentWithRExperience(survey, "Have used it a few times")
 intermediate.user.r <- PercentWithRExperience(survey, "Intermediate user")
 percent.mac <- PercentPeopleUseOperatingSystem(survey, "Mac")
 percent.windows <- PercentPeopleUseOperatingSystem(survey, "Windows")
-
+percent.cat <- PercentCatPerson(survey)
+percent.dog <- PercentDogPerson(survey)
 ```
 ##Survey Summary
-There are a total of `r num.freshmen` freshmen, `r num.sophomores` sophomores, `r num.juniors` juniors, and `r num.seniors` seniors in the class. `r never.used.r`% of people in the class have never used R before, `r used.a.few.times.r`% of people in the class have used R a few times before, and `r intermediate.user.r`% are intermediate users of R. `r percent.mac`% of people typically use Mac operating system while `r percent.windows`% of people typically use Windows operating system.
+There are a total of `r num.freshmen` freshmen, `r num.sophomores` sophomores, `r num.juniors` juniors, and `r num.seniors` seniors in the class. `r never.used.r`% of people in the class have never used R before, `r used.a.few.times.r`% of people in the class have used R a few times before, and `r intermediate.user.r`% are intermediate users of R. `r percent.mac`% of people typically use Mac operating system while `r percent.windows`% of people typically use Windows operating system. `r percent.cat`% of people are cat people, and `r percent.dog`% of people are dog people.
  
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 ggdraw(Chart1(survey))
