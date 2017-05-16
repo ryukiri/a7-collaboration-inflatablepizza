@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-setwd("C:/Users/Austin Quach/Google Drive/College/Sophomore/Info 201/Homework/a7-collaboration-inflatablepizza")
+setwd("~/Documents/a7-collaboration-inflatablepizza")
 survey <- read.csv("data/intro-survey.csv")
 source("./scripts/summary.R")
 source("scripts/chart1.R")
